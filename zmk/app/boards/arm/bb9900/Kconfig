@@ -1,4 +1,0 @@
-# Copyright (c) 2023 ZitaoTech
-# SPDX-License-Identifier: MIT
-
-source "boards/arm/bb9900/Kconfig.features"

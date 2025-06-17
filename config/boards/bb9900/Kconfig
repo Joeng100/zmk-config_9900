@@ -1,15 +1,17 @@
 # Copyright (c) 2023 ZitaoTech
 # SPDX-License-Identifier: MIT
+# Copyright (c) 2023 ZitaoTech
+# SPDX-License-Identifier: MIT
 
-menuconfig ZMK_TRACKPAD_BACKLIGHT
-	bool "BB9900 Trackpad Backlight"
-	depends on BOARD_BB9900
+if BOARD_BB9900
+
+config ZMK_TRACKPAD_BACKLIGHT
+	bool "Enable trackpad backlight"
+	default n
 	select LED
-	select PWM
-	select LED_PWM
-	default y
 	help
-	  Enable backlight for the BB9900 trackpad
+	  Enable the trackpad backlight
+
 
 if ZMK_TRACKPAD_BACKLIGHT
 
@@ -41,6 +43,7 @@ config ZMK_TRACKPAD_BACKLIGHT_BRT
 
 endif # ZMK_TRACKPAD_BACKLIGHT
 
+endif # BOARD_BB9900
 config BOARD_ENABLE_DCDC
     bool "Enable DCDC mode"
     select SOC_DCDC_NRF52X
