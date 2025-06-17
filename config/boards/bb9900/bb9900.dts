@@ -23,9 +23,9 @@
         zmk,battery = &vbatt;
         zmk,kscan = &kscan0;
         zmk,matrix_transform = &default_transform;
-        zmk,led_indicator = &trackpad_backlight;
-        zmk_indicator_capslock= &backlight;
-        zmk,backlight = &trackpad_backlight;
+        zmk,led_indicator = &indi_led_indicator;
+        /*zmk_indicator_capslock= &indi_capslock_indicator;*/
+        zmk,backlight = &backlight;
         zmk_trackpad_backlight = &trackpad_backlight;
     };
 
@@ -53,6 +53,7 @@
     backlight: pwmleds {
         compatible = "pwm-leds";
         pwm_led_0 {
+            pwms = <&pwm2 0 PWM_USEC(20) PWM_POLARITY_NORMAL>;
             pwms = <&pwm1 0 PWM_MSEC(10) PWM_POLARITY_NORMAL>;
         };
     };
