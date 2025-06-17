@@ -24,7 +24,7 @@
         zmk,kscan = &kscan0;
         zmk,matrix_transform = &default_transform;
         zmk,led_indicator = &indi_led_indicator;
-        /*zmk_indicator_capslock= &indi_capslock_indicator;*/
+        zmk_indicator_capslock= &indi_capslock_indicator;
         zmk,backlight = &backlight;
         zmk,trackpad_backlight = &trackpad_backlight;
     };
