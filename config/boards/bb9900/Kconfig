@@ -1,6 +1,49 @@
 # Copyright (c) 2023 ZitaoTech
 # SPDX-License-Identifier: MIT
+# Copyright (c) 2023 ZitaoTech
+# SPDX-License-Identifier: MIT
 
+if BOARD_BB9900
+
+config ZMK_TRACKPAD_BACKLIGHT
+	bool "Enable trackpad backlight"
+	default n
+	select LED
+	help
+	  Enable the trackpad backlight
+
+
+if ZMK_TRACKPAD_BACKLIGHT
+
+config ZMK_TRACKPAD_BACKLIGHT_SYNC_BL
+	bool "Sync trackpad backlight with keyboard backlight"
+	default y
+	help
+	  When enabled, trackpad backlight will be turned on/off together with keyboard backlight
+
+config ZMK_TRACKPAD_CAPSLOCK_BLINK
+	bool "Blink trackpad backlight when Caps Lock is on"
+	default y
+	help
+	  When enabled, trackpad backlight will blink when Caps Lock is on
+
+config ZMK_TRACKPAD_CAPSLOCK_BLINK_INTERVAL
+	int "Trackpad blink interval when Caps Lock is on (ms)"
+	default 200
+	depends on ZMK_TRACKPAD_CAPSLOCK_BLINK
+	help
+	  Interval in milliseconds for trackpad backlight blinking when Caps Lock is on
+
+config ZMK_TRACKPAD_BACKLIGHT_BRT
+	int "Trackpad backlight brightness (1-100)"
+	default 60
+	range 1 100
+	help
+	  Default brightness for trackpad backlight (1-100)
+
+endif # ZMK_TRACKPAD_BACKLIGHT
+
+endif # BOARD_BB9900
 config BOARD_ENABLE_DCDC
     bool "Enable DCDC mode"
     select SOC_DCDC_NRF52X
