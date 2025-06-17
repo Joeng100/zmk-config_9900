@@ -23,6 +23,33 @@ config LED_PWM
 
 endif # ZMK_BACKLIGHT
 
+config ZMK_TRACKPAD_BACKLIGHT
+    bool "Enable trackpad backlight"
+    default n
+    select LED
+
+if ZMK_TRACKPAD_BACKLIGHT
+
+config ZMK_TRACKPAD_BACKLIGHT_SYNC_BL
+    bool "Sync trackpad backlight with keyboard backlight"
+    default y
+
+config ZMK_TRACKPAD_CAPSLOCK_BLINK
+    bool "Blink trackpad backlight when Caps Lock is on"
+    default y
+
+config ZMK_TRACKPAD_CAPSLOCK_BLINK_INTERVAL
+    int "Trackpad blink interval when Caps Lock is on (ms)"
+    default 200
+    depends on ZMK_TRACKPAD_CAPSLOCK_BLINK
+
+config ZMK_TRACKPAD_BACKLIGHT_BRT
+    int "Trackpad backlight brightness (1-100)"
+    default 60
+    range 1 100
+
+endif # ZMK_TRACKPAD_BACKLIGHT
+
 config BT_CTLR
     default BT
 
