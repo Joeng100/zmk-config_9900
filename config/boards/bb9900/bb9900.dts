@@ -26,17 +26,9 @@
         zmk,led_indicator = &indi_led_indicator;
         zmk_indicator_capslock= &indi_capslock_indicator;
         zmk,backlight = &backlight;
-        zmk,trackpad_backlight = &trackpad_backlight;
     };
 
     indi_capslock_indicator:  pwmledo {
-        compatible = "pwm-leds";
-        pwm_led_0 {
-            pwms = <&pwm2 0 PWM_USEC(20) PWM_POLARITY_NORMAL>;
-        };
-    };
-
-    trackpad_backlight: pwmledtp {
         compatible = "pwm-leds";
         pwm_led_0 {
             pwms = <&pwm2 0 PWM_USEC(20) PWM_POLARITY_NORMAL>;
