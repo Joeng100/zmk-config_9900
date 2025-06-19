@@ -34,9 +34,7 @@
 
     pwm1_default:pwm1_default{
         group1{
-            psels = <NRF_PSEL(PWM_OUT0, 0, 9)>, // Backlight for Keyboard
-                    <NRF_PSEL(PWM_OUT0, 0, 10)>, // Backlight for Trackpad
-                    <NRF_PSEL(PWM_OUT0, 0, 3)>; // Backlight for Layerindicator
+            psels = <NRF_PSEL(PWM_OUT0, 0, 9)>; // Backlight for Keyboard
         };
     };
 
